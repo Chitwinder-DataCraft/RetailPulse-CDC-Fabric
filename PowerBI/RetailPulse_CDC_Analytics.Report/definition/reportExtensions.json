@@ -8,8 +8,7 @@
         {
           "name": "Last Refresh Date",
           "dataType": "Double",
-          "expression": "\nFORMAT(NOW(), \"dd MMM yyyy | hh:mm AM/PM\")",
-          "formatString": "General Number"
+          "expression": "\nFORMAT(NOW(), \"dd MMM yyyy | hh:mm AM/PM\")"
         }
       ]
     }

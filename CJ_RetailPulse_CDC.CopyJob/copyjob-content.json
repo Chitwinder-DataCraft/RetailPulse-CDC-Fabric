@@ -1,0 +1,203 @@
+{
+  "properties": {
+    "jobMode": "CDC",
+    "fullLoadBehavior": "Truncate",
+    "source": {
+      "type": "AzureSqlTable",
+      "connectionSettings": {
+        "type": "AzureSqlDatabase",
+        "typeProperties": {
+          "database": "retailpulsedb"
+        },
+        "externalReferences": {
+          "connection": "f2129465-93a7-4c9d-b3a2-2b907ff1d669"
+        }
+      }
+    },
+    "destination": {
+      "type": "LakehouseTable",
+      "connectionSettings": {
+        "type": "Lakehouse",
+        "typeProperties": {
+          "workspaceId": "859f1279-ca40-4f84-ac03-dcc106c8e419",
+          "artifactId": "9e31c825-c50d-4153-92b6-153ab8c8ef80",
+          "rootFolder": "Tables"
+        }
+      }
+    },
+    "policy": {
+      "timeout": "0.12:00:00",
+      "retry": 0
+    }
+  },
+  "activities": [
+    {
+      "id": "fe6cb364-01f9-401b-8fb9-fc4fb3cbdab8",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "Customers"
+          },
+          "changeDataSettings": {
+            "readMethod": "SnapshotPlusIncremental"
+          },
+          "partitionSettings": {
+            "partitionOption": "None"
+          }
+        },
+        "destination": {
+          "upsertSettings": {
+            "keys": [
+              "CustomerID"
+            ]
+          },
+          "writeBehavior": "Upsert",
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "Customers"
+          },
+          "applyVOrder": false,
+          "enableTimestampNtz": false,
+          "enableChangeDataFeed": false
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "4fc127b6-5b9c-423d-ab7d-0f793462a226",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "OrderDetails"
+          },
+          "changeDataSettings": {
+            "readMethod": "SnapshotPlusIncremental"
+          },
+          "partitionSettings": {
+            "partitionOption": "None"
+          }
+        },
+        "destination": {
+          "upsertSettings": {
+            "keys": [
+              "OrderDetailID"
+            ]
+          },
+          "writeBehavior": "Upsert",
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "OrderDetails"
+          },
+          "applyVOrder": false,
+          "enableTimestampNtz": false,
+          "enableChangeDataFeed": false
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "1171e97d-b9f3-4f27-a34f-c27d78d2a259",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "Orders"
+          },
+          "changeDataSettings": {
+            "readMethod": "SnapshotPlusIncremental"
+          },
+          "partitionSettings": {
+            "partitionOption": "None"
+          }
+        },
+        "destination": {
+          "upsertSettings": {
+            "keys": [
+              "OrderID"
+            ]
+          },
+          "writeBehavior": "Upsert",
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "Orders"
+          },
+          "applyVOrder": false,
+          "enableTimestampNtz": false,
+          "enableChangeDataFeed": false
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "55569176-1845-4c97-9270-cf5ba3ee3240",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "Products"
+          },
+          "changeDataSettings": {
+            "readMethod": "SnapshotPlusIncremental"
+          },
+          "partitionSettings": {
+            "partitionOption": "None"
+          }
+        },
+        "destination": {
+          "upsertSettings": {
+            "keys": [
+              "ProductID"
+            ]
+          },
+          "writeBehavior": "Upsert",
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "Products"
+          },
+          "applyVOrder": false,
+          "enableTimestampNtz": false,
+          "enableChangeDataFeed": false
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+table _Meaures
+	lineageTag: 3fe0438d-ce81-4304-9bd7-3dbda2c51fc4
+
+	measure 'Total Customers' =
+			
+			DISTINCTCOUNT(fact_sales[CustomerID])
+		formatString: 0
+		lineageTag: fc03efca-81e7-4184-a8fe-e77ebab3e662
+
+	measure 'Total Sales' =
+			
+			SUM(fact_sales[LineAmount])
+		lineageTag: 6c0301a4-a4be-4c04-86f3-efb59b216172
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Quantity' =
+			
+			SUM(fact_sales[Quantity])
+		formatString: 0
+		lineageTag: 9f53062f-87bb-4702-b939-cfab2a0f0904
+
+	measure 'Total Orders' =
+			
+			DISTINCTCOUNT(fact_sales[OrderID])
+		formatString: 0
+		lineageTag: 93e11a30-b5c4-4bb7-8dcf-bf6b62f9c88d
+
+	measure 'Average Order Value' =
+			
+			DIVIDE(
+			    [Total Sales],
+			    [Total Orders]
+			)
+		lineageTag: 7e5fe470-787e-40eb-b0ad-a5e7738e549b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Average Discount' =
+			
+			AVERAGE(fact_sales[DiscountPercent])
+		lineageTag: 05aa6e8e-df9f-4686-8884-186af0c569df
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Value
+		formatString: 0
+		lineageTag: 628ca59d-972d-4a1e-90a5-f4e17a93bcab
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Meaures = calculated
+		mode: import
+		source = {1}
+
+	annotation PBI_Id = 4bf118819c3249da8734407dabe2ab0d
+

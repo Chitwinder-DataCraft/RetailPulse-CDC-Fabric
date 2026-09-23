@@ -1,0 +1,84 @@
+table dim_customer
+	lineageTag: f20de8f0-c727-4284-8139-67be800328be
+	sourceLineageTag: [dbo].[dim_customer]
+
+	column CustomerID
+		dataType: int64
+		formatString: 0
+		lineageTag: 099738a7-1775-46c2-b488-18f76197a8fc
+		sourceLineageTag: CustomerID
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerName
+		dataType: string
+		lineageTag: de825322-3244-405f-ae89-2733f1b7b5a8
+		sourceLineageTag: CustomerName
+		summarizeBy: none
+		sourceColumn: CustomerName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: 1713907f-48ab-4e11-9c08-366d24df6073
+		sourceLineageTag: Email
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phone
+		dataType: string
+		lineageTag: 53f2ab62-0f08-4176-95af-058d34b9c2c8
+		sourceLineageTag: Phone
+		summarizeBy: none
+		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 79f34061-70b7-4efd-8af5-ddb0e8a3a9cc
+		sourceLineageTag: City
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: a551b8e9-8917-43b2-b0bd-ea1ee56c2676
+		sourceLineageTag: State
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: cfed8378-97a0-4ffd-a06d-16cca3553ee5
+		sourceLineageTag: Country
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerSegment
+		dataType: string
+		lineageTag: 3d81f7b8-741b-455d-b42b-4372f4e4bdf7
+		sourceLineageTag: CustomerSegment
+		summarizeBy: none
+		sourceColumn: CustomerSegment
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_customer = entity
+		mode: directLake
+		source
+			entityName: dim_customer
+			schemaName: dbo
+			expressionSource: 'DirectLake - LH_Retail_Gold'
+

@@ -1,0 +1,89 @@
+table dim_date
+	lineageTag: 89e65c2e-0832-40ec-b47b-3258f7d4b9a7
+	sourceLineageTag: [dbo].[dim_date]
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ec5ffd05-7ae4-4b14-82e9-987017b7724e
+		sourceLineageTag: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: c26bd145-78d9-4c06-8cfe-7778f55146dd
+		sourceLineageTag: DateKey
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 35b268b5-e026-4f57-a229-13eee5e82ad7
+		sourceLineageTag: Year
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: 9ad7f127-41d4-40db-906e-70ceb295b0f6
+		sourceLineageTag: Quarter
+		summarizeBy: none
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		lineageTag: 275b3cff-addf-4277-a6a9-1d80937cce7e
+		sourceLineageTag: Month
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName
+		dataType: string
+		lineageTag: a6c97532-cd00-448b-b07d-b2c283d69613
+		sourceLineageTag: MonthName
+		summarizeBy: none
+		sourceColumn: MonthName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		dataType: int64
+		formatString: 0
+		lineageTag: 37cba47e-7114-4c87-baff-52808fd94945
+		sourceLineageTag: Day
+		summarizeBy: none
+		sourceColumn: Day
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayName
+		dataType: string
+		lineageTag: 24ea5c8d-8e7c-437a-baa7-a3e8c7d29517
+		sourceLineageTag: DayName
+		summarizeBy: none
+		sourceColumn: DayName
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_date = entity
+		mode: directLake
+		source
+			entityName: dim_date
+			schemaName: dbo
+			expressionSource: 'DirectLake - LH_Retail_Gold'
+

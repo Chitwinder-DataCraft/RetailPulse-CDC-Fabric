@@ -1,0 +1,64 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "31d8047a50d34ad48944",
+  "position": {
+    "x": 112,
+    "y": 0,
+    "z": 3000,
+    "height": 80,
+    "width": 464,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Retail",
+                    "textStyle": {
+                      "fontSize": "28pt",
+                      "color": "#ffffff"
+                    }
+                  },
+                  {
+                    "value": "Pulse",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "28pt",
+                      "color": "#d9b300"
+                    }
+                  },
+                  {
+                    "value": "_CDC_Analytics",
+                    "textStyle": {
+                      "fontSize": "28pt",
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "From Data to Decisions",
+                    "textStyle": {
+                      "fontSize": "16pt",
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "23ba867472bee7aca805"
+}

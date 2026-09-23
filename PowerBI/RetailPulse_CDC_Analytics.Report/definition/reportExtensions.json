@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/reportExtension/1.0.0/schema.json",
+  "name": "extension",
+  "entities": [
+    {
+      "name": "_Meaures",
+      "measures": [
+        {
+          "name": "Last Refresh Date",
+          "dataType": "Double",
+          "expression": "\nFORMAT(NOW(), \"dd MMM yyyy | hh:mm AM/PM\")",
+          "formatString": "General Number"
+        }
+      ]
+    }
+  ]
+}

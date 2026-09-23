@@ -1,0 +1,9 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definitionProperties/2.0.0/schema.json",
+  "version": "4.0",
+  "datasetReference": {
+    "byConnection": {
+      "connectionString": "Data Source=powerbi://api.powerbi.com/v1.0/myorg/RetailPulse_CDC_Analytics_Dev;initial catalog=SM_RetailPulse_Analytics;access mode=readonly;integrated security=ClaimsToken;semanticmodelid=30bd5ac2-e034-43e8-950e-cfcaaf5c1125"
+    }
+  }
+}

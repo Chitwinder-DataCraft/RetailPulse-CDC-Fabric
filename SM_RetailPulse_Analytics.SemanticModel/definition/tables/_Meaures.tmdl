@@ -10,9 +10,8 @@ table _Meaures
 	measure 'Total Sales' =
 			
 			SUM(fact_sales[LineAmount])
+		formatString: 0
 		lineageTag: 6c0301a4-a4be-4c04-86f3-efb59b216172
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Total Quantity' =
 			
@@ -32,16 +31,16 @@ table _Meaures
 			    [Total Sales],
 			    [Total Orders]
 			)
+		formatString: Standard
 		lineageTag: 7e5fe470-787e-40eb-b0ad-a5e7738e549b
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"isCustom":true}
 
 	measure 'Average Discount' =
 			
 			AVERAGE(fact_sales[DiscountPercent])
+		formatString: 0.0
 		lineageTag: 05aa6e8e-df9f-4686-8884-186af0c569df
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Value
 		formatString: 0

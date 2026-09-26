@@ -9,6 +9,182 @@
           "name": "Last Refresh Date",
           "dataType": "Double",
           "expression": "\nFORMAT(NOW(), \"dd MMM yyyy | hh:mm AM/PM\")"
+        },
+        {
+          "name": "Sales Growth %",
+          "dataType": "Double",
+          "expression": "\r\nVAR CurrentSales =\r\n    [Total Sales]\r\n\r\nVAR PreviousWeekSales =\r\n    CALCULATE(\r\n        [Total Sales],\r\n        DATEADD(dim_date[Date], -7, DAY)\r\n    )\r\n\r\nRETURN\r\n    DIVIDE(\r\n        CurrentSales - PreviousWeekSales,\r\n        PreviousWeekSales\r\n    )",
+          "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+          "references": {
+            "measures": [
+              {
+                "entity": "_Meaures",
+                "name": "Total Sales"
+              }
+            ]
+          }
+        },
+        {
+          "name": "TotalSales MoM%",
+          "dataType": "Double",
+          "expression": "\nVAR __PREV_MONTH = CALCULATE([Total Sales], DATEADD(dim_date[Date], -1, MONTH))\nRETURN\n\tDIVIDE([Total Sales] - __PREV_MONTH, __PREV_MONTH)",
+          "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+          "displayFolder": "TotalSales",
+          "references": {
+            "measures": [
+              {
+                "entity": "_Meaures",
+                "name": "Total Sales"
+              }
+            ]
+          }
+        },
+        {
+          "name": "TotalSales Prior Month",
+          "dataType": "Double",
+          "expression": "CALCULATE([Total Sales], DATEADD(dim_date[Date], -1, MONTH))",
+          "displayFolder": "TotalSales",
+          "references": {
+            "measures": [
+              {
+                "entity": "_Meaures",
+                "name": "Total Sales"
+              }
+            ]
+          }
+        },
+        {
+          "name": "TotalQuantity MoM%",
+          "dataType": "Double",
+          "expression": "\r\nVAR __PREV_MONTH = CALCULATE([Total Quantity], DATEADD(dim_date[Date], -1, MONTH))\r\nRETURN\r\n\tDIVIDE([Total Quantity] - __PREV_MONTH, __PREV_MONTH)",
+          "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+          "displayFolder": "TotalQuantity",
+          "references": {
+            "measures": [
+              {
+                "entity": "_Meaures",
+                "name": "Total Quantity"
+              }
+            ]
+          }
+        },
+        {
+          "name": "TotalQuantity Prior Month",
+          "dataType": "Double",
+          "expression": "CALCULATE([Total Quantity], DATEADD(dim_date[Date], -1, MONTH))",
+          "displayFolder": "TotalQuantity",
+          "references": {
+            "measures": [
+              {
+                "entity": "_Meaures",
+                "name": "Total Quantity"
+              }
+            ]
+          }
+        },
+        {
+          "name": "TotalOrders Prior Month",
+          "dataType": "Double",
+          "expression": "CALCULATE([Total Orders], DATEADD(dim_date[Date], -1, MONTH))",
+          "displayFolder": "TotalOrders",
+          "references": {
+            "measures": [
+              {
+                "entity": "_Meaures",
+                "name": "Total Orders"
+              }
+            ]
+          }
+        },
+        {
+          "name": "TotalCustomers Prior Month",
+          "dataType": "Double",
+          "expression": "CALCULATE([Total Customers], DATEADD(dim_date[Date], -1, MONTH))",
+          "displayFolder": "Total Customers",
+          "references": {
+            "measures": [
+              {
+                "entity": "_Meaures",
+                "name": "Total Customers"
+              }
+            ]
+          }
+        },
+        {
+          "name": "TotalCustomers MoM%",
+          "dataType": "Double",
+          "expression": "\r\nVAR __PREV_MONTH = CALCULATE([Total Customers], DATEADD(dim_date[Date], -1, MONTH))\r\nRETURN\r\n\tDIVIDE([Total Customers] - __PREV_MONTH, __PREV_MONTH)",
+          "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+          "displayFolder": "Total Customers",
+          "references": {
+            "measures": [
+              {
+                "entity": "_Meaures",
+                "name": "Total Customers"
+              }
+            ]
+          }
+        },
+        {
+          "name": "TotalOrders MoM%",
+          "dataType": "Double",
+          "expression": "\r\nVAR __PREV_MONTH = CALCULATE([Total Quantity], DATEADD(dim_date[Date], -1, MONTH))\r\nRETURN\r\n\tDIVIDE([Total Quantity] - __PREV_MONTH, __PREV_MONTH)",
+          "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+          "displayFolder": "TotalOrders",
+          "references": {
+            "measures": [
+              {
+                "entity": "_Meaures",
+                "name": "Total Quantity"
+              }
+            ]
+          }
+        },
+        {
+          "name": "AverageOV Prior Month",
+          "dataType": "Double",
+          "expression": "CALCULATE([Average Order Value], DATEADD(dim_date[Date], -1, MONTH))",
+          "displayFolder": "AverageOV",
+          "references": {
+            "measures": [
+              {
+                "entity": "_Meaures",
+                "name": "Average Order Value"
+              }
+            ]
+          }
+        },
+        {
+          "name": "TotalDiscount MoM%",
+          "dataType": "Double",
+          "expression": "\r\nVAR __PREV_MONTH = CALCULATE([Average Discount], DATEADD(dim_date[Date], -1, MONTH))\r\nRETURN\r\n\tDIVIDE([Total Quantity] - __PREV_MONTH, __PREV_MONTH)",
+          "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+          "references": {
+            "measures": [
+              {
+                "entity": "_Meaures",
+                "name": "Average Discount"
+              },
+              {
+                "entity": "_Meaures",
+                "name": "Total Quantity"
+              }
+            ]
+          }
+        },
+        {
+          "name": "AverageOV MoM%",
+          "dataType": "Double",
+          "expression": "\r\nVAR __PREV_MONTH = CALCULATE([Average Order Value], DATEADD(dim_date[Date], -1, MONTH))\r\nRETURN\r\n\tDIVIDE([Average Order Value] - __PREV_MONTH, __PREV_MONTH)",
+          "displayFolder": "AverageOV",
+          "references": {
+            "measures": [
+              {
+                "entity": "_Meaures",
+                "name": "Average Order Value"
+              }
+            ]
+          }
         }
       ]
     }

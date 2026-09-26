@@ -7,10 +7,10 @@
     "z": 1000,
     "height": 112,
     "width": 1904,
-    "tabOrder": 7005
+    "tabOrder": 1000
   },
   "visualGroup": {
-    "displayName": "Header",
+    "displayName": "TC",
     "groupMode": "ScaleMode"
   }
 }

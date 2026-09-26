@@ -4,10 +4,10 @@
   "position": {
     "x": 81,
     "y": 651.42857142857144,
-    "z": 6009,
+    "z": 14000,
     "height": 80,
     "width": 208,
-    "tabOrder": 7017
+    "tabOrder": 14000
   },
   "visual": {
     "visualType": "slicer",
@@ -125,20 +125,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "c0c0fdadb20b12ab0066",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_customer"
-              }
-            },
-            "Property": "Country"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

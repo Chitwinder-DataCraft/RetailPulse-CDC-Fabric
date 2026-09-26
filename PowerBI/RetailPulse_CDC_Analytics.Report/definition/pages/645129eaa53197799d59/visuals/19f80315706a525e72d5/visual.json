@@ -4,10 +4,10 @@
   "position": {
     "x": 81,
     "y": 733.71428571428578,
-    "z": 6010,
+    "z": 15000,
     "height": 80,
     "width": 208,
-    "tabOrder": 7018
+    "tabOrder": 15000
   },
   "visual": {
     "visualType": "slicer",
@@ -125,20 +125,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "73156eee772b226cc464",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_customer"
-              }
-            },
-            "Property": "State"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

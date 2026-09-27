@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "15948328613785a3a926",
   "position": {
-    "x": 80,
-    "y": 112,
-    "z": 3000,
+    "x": 96,
+    "y": 32,
+    "z": 1000,
     "height": 48,
     "width": 208,
-    "tabOrder": 3000
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "textbox",
@@ -19,16 +19,44 @@
               {
                 "textRuns": [
                   {
-                    "value": "Filter",
+                    "value": "Retail Pulse",
                     "textStyle": {
-                      "fontWeight": "bold",
-                      "fontSize": "18pt",
-                      "color": "#123d2a"
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "24pt",
+                      "color": "#000000"
                     }
                   }
                 ]
               }
             ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
           }
         }
       ]

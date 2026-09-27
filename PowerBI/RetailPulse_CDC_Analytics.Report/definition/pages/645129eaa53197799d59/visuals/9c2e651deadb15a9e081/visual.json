@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "9c2e651deadb15a9e081",
   "position": {
-    "x": 1328,
-    "y": 16,
-    "z": 7000,
-    "height": 80,
-    "width": 479.99999999999994,
-    "tabOrder": 8000
+    "x": 1561.73740018327,
+    "y": 56.099489461971466,
+    "z": 4000,
+    "height": 39.812540908495876,
+    "width": 342.02591962298732,
+    "tabOrder": 22000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -90,8 +90,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#ffffff'"
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
                     }
                   }
                 }
@@ -101,6 +102,20 @@
               "expr": {
                 "Literal": {
                   "Value": "'''Segoe UI Light'', wf_segoe-ui_light, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "22D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -153,9 +168,34 @@
             }
           }
         }
+      ],
+      "background": [
+        {
+          "properties": {
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "100D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "parentGroupName": "23ba867472bee7aca805"
+  }
 }

@@ -9,6 +9,15 @@
         "page": "2.3.1"
       },
       "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "RetailPulse4059302386981647.json",
+      "reportVersionAtImport": {
+        "visual": "2.12.0",
+        "report": "3.4.0",
+        "page": "2.3.1"
+      },
+      "type": "RegisteredResources"
     }
   },
   "objects": {
@@ -56,54 +65,9 @@
       "type": "RegisteredResources",
       "items": [
         {
-          "name": "Image-12846231830944487.png",
-          "path": "Image-12846231830944487.png",
-          "type": "Image"
-        },
-        {
-          "name": "Image-24356517533336669.png",
-          "path": "Image-24356517533336669.png",
-          "type": "Image"
-        },
-        {
-          "name": "Image-39688891585135246.png",
-          "path": "Image-39688891585135246.png",
-          "type": "Image"
-        },
-        {
-          "name": "Image-46809514219376319.png",
-          "path": "Image-46809514219376319.png",
-          "type": "Image"
-        },
-        {
-          "name": "Image-507981696835769225.png",
-          "path": "Image-507981696835769225.png",
-          "type": "Image"
-        },
-        {
-          "name": "Image-68287077444263059.png",
-          "path": "Image-68287077444263059.png",
-          "type": "Image"
-        },
-        {
-          "name": "Image-69662680310632344.png",
-          "path": "Image-69662680310632344.png",
-          "type": "Image"
-        },
-        {
-          "name": "Image-77675510896130977.png",
-          "path": "Image-77675510896130977.png",
-          "type": "Image"
-        },
-        {
-          "name": "Image-81649384924750582.png",
-          "path": "Image-81649384924750582.png",
-          "type": "Image"
-        },
-        {
-          "name": "Image-91094177568852075.png",
-          "path": "Image-91094177568852075.png",
-          "type": "Image"
+          "name": "RetailPulse4059302386981647.json",
+          "path": "RetailPulse4059302386981647.json",
+          "type": "CustomTheme"
         }
       ]
     }

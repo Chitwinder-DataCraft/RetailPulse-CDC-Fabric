@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "6c655923000036d49c50",
   "position": {
-    "x": 592,
+    "x": 320.30998821835317,
     "y": 0,
-    "z": 8000,
-    "height": 112,
-    "width": 624,
-    "tabOrder": 9000
+    "z": 6000,
+    "height": 80,
+    "width": 432,
+    "tabOrder": 21000
   },
   "visual": {
     "visualType": "textbox",
@@ -21,8 +21,9 @@
                   {
                     "value": "Executive Overview",
                     "textStyle": {
+                      "fontFamily": "Segoe UI",
                       "fontSize": "28pt",
-                      "color": "#ffffff"
+                      "color": "#000000"
                     }
                   }
                 ]
@@ -30,19 +31,50 @@
               {
                 "textRuns": [
                   {
-                    "value": "Sales | Customers | Products | Key Insights",
+                    "value": "Sales ",
                     "textStyle": {
                       "fontSize": "16pt",
-                      "color": "#ffffff"
+                      "color": "#b3b3b3"
                     }
-                  }
-                ],
-                "horizontalTextAlignment": "center"
-              },
-              {
-                "textRuns": [
+                  },
                   {
-                    "value": ""
+                    "value": "● ",
+                    "textStyle": {
+                      "color": "#b3b3b3"
+                    }
+                  },
+                  {
+                    "value": " Customers ",
+                    "textStyle": {
+                      "fontSize": "16pt",
+                      "color": "#b3b3b3"
+                    }
+                  },
+                  {
+                    "value": "● ",
+                    "textStyle": {
+                      "color": "#b3b3b3"
+                    }
+                  },
+                  {
+                    "value": " Products ",
+                    "textStyle": {
+                      "fontSize": "16pt",
+                      "color": "#b3b3b3"
+                    }
+                  },
+                  {
+                    "value": "● ",
+                    "textStyle": {
+                      "color": "#b3b3b3"
+                    }
+                  },
+                  {
+                    "value": " Key Insights",
+                    "textStyle": {
+                      "fontSize": "16pt",
+                      "color": "#b3b3b3"
+                    }
                   }
                 ]
               }
@@ -51,7 +83,51 @@
         }
       ]
     },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#F7F5EF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "100D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
-  },
-  "parentGroupName": "23ba867472bee7aca805"
+  }
 }

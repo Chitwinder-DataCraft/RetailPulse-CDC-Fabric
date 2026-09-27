@@ -128,14 +128,14 @@
         {
           "name": "TotalOrders MoM%",
           "dataType": "Double",
-          "expression": "\r\nVAR __PREV_MONTH = CALCULATE([Total Quantity], DATEADD(dim_date[Date], -1, MONTH))\r\nRETURN\r\n\tDIVIDE([Total Quantity] - __PREV_MONTH, __PREV_MONTH)",
+          "expression": "\r\nVAR __PREV_MONTH = CALCULATE([Total Orders], DATEADD(dim_date[Date], -1, MONTH))\r\nRETURN\r\n\tDIVIDE([Total Orders] - __PREV_MONTH, __PREV_MONTH)",
           "formatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
           "displayFolder": "TotalOrders",
           "references": {
             "measures": [
               {
                 "entity": "_Meaures",
-                "name": "Total Quantity"
+                "name": "Total Orders"
               }
             ]
           }
@@ -182,6 +182,118 @@
               {
                 "entity": "_Meaures",
                 "name": "Average Order Value"
+              }
+            ]
+          }
+        },
+        {
+          "name": "prmSales1",
+          "dataType": "Double",
+          "expression": "{\r\n    (\"Gross Sales\", NAMEOF('_Meaures'[Total Orders]), 0),\r\n    (\"Net Sales\", NAMEOF('_Meaures'[Total Orders]), 1),\r\n    (\"Units Sold\", NAMEOF('_Meaures'[Total Orders]), 2),\r\n    (\"Units Returned\", NAMEOF('_Meaures'[Total Orders]), 3),\r\n    (\"Return Rate\", NAMEOF('_Meaures'[Total Orders]), 4)\r\n}",
+          "references": {
+            "measures": [
+              {
+                "entity": "_Meaures",
+                "name": "Total Orders"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Sales Delta",
+          "dataType": "Double",
+          "expression": "VAR pct = DIVIDE([Total Sales]-[TotalSales Prior Month],[TotalSales Prior Month]) RETURN IF(pct>=0, UNICHAR(9650) & \" \" & FORMAT(pct,\"0.0%\"), UNICHAR(9660) & \" \" & FORMAT(pct,\"0.0%\"))",
+          "displayFolder": "TotalSales",
+          "references": {
+            "measures": [
+              {
+                "entity": "_Meaures",
+                "name": "Total Sales"
+              },
+              {
+                "schema": "extension",
+                "entity": "_Meaures",
+                "name": "TotalSales Prior Month"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Quantity Delta",
+          "dataType": "Double",
+          "expression": "VAR pct = DIVIDE([Total Quantity]-[TotalQuantity Prior Month],[TotalQuantity Prior Month]) RETURN IF(pct>=0, UNICHAR(9650) & \" \" & FORMAT(pct,\"0.0%\"), UNICHAR(9660) & \" \" & FORMAT(pct,\"0.0%\"))",
+          "formatString": "General Number",
+          "displayFolder": "TotalQuantity",
+          "references": {
+            "measures": [
+              {
+                "entity": "_Meaures",
+                "name": "Total Quantity"
+              },
+              {
+                "schema": "extension",
+                "entity": "_Meaures",
+                "name": "TotalQuantity Prior Month"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Orders Delta",
+          "dataType": "Double",
+          "expression": "VAR pct = DIVIDE([Total Orders]-[TotalOrders Prior Month],[TotalOrders Prior Month]) RETURN IF(pct>=0, UNICHAR(9650) & \" \" & FORMAT(pct,\"0.0%\"), UNICHAR(9660) & \" \" & FORMAT(pct,\"0.0%\"))",
+          "formatString": "General Number",
+          "displayFolder": "TotalOrders",
+          "references": {
+            "measures": [
+              {
+                "entity": "_Meaures",
+                "name": "Total Orders"
+              },
+              {
+                "schema": "extension",
+                "entity": "_Meaures",
+                "name": "TotalOrders Prior Month"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Customers Delta",
+          "dataType": "Double",
+          "expression": "VAR pct = DIVIDE([Total Customers]-[TotalCustomers Prior Month],[TotalCustomers Prior Month]) RETURN IF(pct>=0, UNICHAR(9650) & \" \" & FORMAT(pct,\"0.0%\"), UNICHAR(9660) & \" \" & FORMAT(pct,\"0.0%\"))",
+          "formatString": "General Number",
+          "displayFolder": "Total Customers",
+          "references": {
+            "measures": [
+              {
+                "entity": "_Meaures",
+                "name": "Total Customers"
+              },
+              {
+                "schema": "extension",
+                "entity": "_Meaures",
+                "name": "TotalCustomers Prior Month"
+              }
+            ]
+          }
+        },
+        {
+          "name": "AOV Delta",
+          "dataType": "Double",
+          "expression": "VAR pct = DIVIDE([Average Order Value]-[AverageOV Prior Month],[AverageOV Prior Month]) RETURN IF(pct>=0, UNICHAR(9650) & \" \" & FORMAT(pct,\"0.0%\"), UNICHAR(9660) & \" \" & FORMAT(pct,\"0.0%\"))",
+          "formatString": "General Number",
+          "displayFolder": "AverageOV",
+          "references": {
+            "measures": [
+              {
+                "entity": "_Meaures",
+                "name": "Average Order Value"
+              },
+              {
+                "schema": "extension",
+                "entity": "_Meaures",
+                "name": "AverageOV Prior Month"
               }
             ]
           }
